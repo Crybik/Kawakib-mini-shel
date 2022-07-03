@@ -1,4 +1,4 @@
-# Kawakib-mini-shel
+# Kawakib-mini-shell
 <p>
   This is Kawakib-Mini shell - 2020/06/27 - 4:19 AM <br>
   - Upload files <br>
